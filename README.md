@@ -1,7 +1,6 @@
 # README
 
-Hey! This project is an attempt to study statistics with ruby ​​on rails. The book chosen is 'Statistics for Quality' written by Sônia Vieira.
-Every chapter is one endpoint with the general formula and solved questions.
+Hey! This project is an attempt to study statistics with ruby ​​on rails.
 Enjoy!
 
 # RUBY VERSION

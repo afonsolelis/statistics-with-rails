@@ -1,0 +1,233 @@
+AllCops:
+  NewCops: enable
+  Exclude:
+    - "bin/*"
+    - "config/initializers/**/*"
+    - "db/schema.rb"
+    - "db/migrate/**/*"
+    - "node_modules/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - ".git/**/*"
+
+## Bundler
+
+Bundler/OrderedGems:
+  Description: "Gems should be alphabetically sorted within groups."
+  Enabled: false
+
+## Metrics
+# Metrics are disabled and should be regarded as as TODO
+Metrics/ParameterLists:
+  Description: ""
+  Enabled: false
+
+Metrics/AbcSize:
+  Description: "This cop checks that the ABC size of methods is not higher than the configured maximum."
+  Enabled: false
+
+Metrics/BlockLength:
+  Description: "This cop checks if the length of a block exceeds some maximum value."
+  Enabled: false
+
+Metrics/ClassLength:
+  Description: "This cop checks if the length of a class exceeds some maximum value."
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Description: "This cop checks that the cyclomatic complexity of methods is not higher than the configured maximum."
+  Enabled: false
+
+Metrics/MethodLength:
+  Description: "This cop checks if the length of a method exceeds some maximum value."
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Description: "This cop tries to produce a complexity score that’s a measure of the complexity the reader experiences when looking at a method."
+  Enabled: false
+
+Metrics/ModuleLength:
+  Description: "This cop checks if the length a module exceeds some maximum value."
+  Max: 110
+  Exclude:
+    - "spec/**/*"
+
+## Naming
+
+Naming/VariableNumber:
+  Description: "This cop makes sure that all numbered variables use the configured style."
+  EnforcedStyle: snake_case
+  CheckSymbols: false
+
+## Style
+
+Style/Documentation:
+  Description: "Document classes and non-namespace modules."
+  Enabled: false
+
+Style/EndOfLine:
+  Enabled: false
+
+## Layout
+
+Layout/FirstHashElementLineBreak:
+  Description: "This cop checks for a line break before the first element in a multi-line hash."
+  Enabled: true
+
+Layout/HashAlignment:
+  Description: "Check that the keys, separators, and values of a multi-line hash literal are aligned according to configuration."
+  Enabled: true
+  EnforcedColonStyle: table
+  EnforcedHashRocketStyle: table
+  EnforcedLastArgumentHashStyle: always_inspect
+
+## Todos
+# The following cops should be treated as TODO
+
+Style/RedundantRegexpEscape:
+  Description: ""
+  Enabled: false
+
+Lint/MissingSuper:
+  Description: ""
+  Enabled: false
+
+Style/OptionalBooleanParameter:
+  Description: ""
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Description: ""
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Description: ""
+  Enabled: false
+
+Style/NegatedIf:
+  Description: ""
+  Enabled: false
+
+Style/SymbolArray:
+  Description: ""
+  Enabled: false
+
+Naming/PredicateName:
+  Description: ""
+  Enabled: false
+
+Lint/UnusedMethodArgument:
+  Description: ""
+  Enabled: false
+
+Style/GuardClause:
+  Description: ""
+  Enabled: false
+
+Style/HashSyntax:
+  Description: ""
+  Enabled: false
+
+Lint/SafeNavigationChain:
+  Description: ""
+  Enabled: false
+
+Style/GlobalStdStream:
+  Description: ""
+  Enabled: false
+
+Style/RedundantFileExtensionInRequire:
+  Description: ""
+  Enabled: false
+
+Style/CaseLikeIf:
+  Description: ""
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  Description: ""
+  Enabled: false
+
+Style/RedundantFetchBlock:
+  Description: ""
+  Enabled: false
+
+Style/WordArray:
+  Description: ""
+  Enabled: false
+
+Lint/UselessMethodDefinition:
+  Description: ""
+  Enabled: false
+
+Naming/RescuedExceptionsVariableName:
+  Description: ""
+  Enabled: false
+
+Style/ExpandPathArguments:
+  Description: ""
+  Enabled: false
+
+Style/IfInsideElse:
+  Description: ""
+  Enabled: false
+
+Style/RedundantBegin:
+  Description: ""
+  Enabled: false
+
+Lint/ParenthesesAsGroupedExpression:
+  Description: ""
+  Enabled: false
+
+Lint/ShadowingOuterLocalVariable:
+  Description: ""
+  Enabled: false
+
+Style/ClassEqualityComparison:
+  Description: ""
+  Enabled: false
+
+Style/ConditionalAssignment:
+  Description: ""
+  Enabled: false
+
+Style/InverseMethods:
+  Description: ""
+  Enabled: false
+
+Style/MutableConstant:
+  Description: ""
+  Enabled: false
+
+Style/Next:
+  Description: ""
+  Enabled: false
+
+Style/NilComparison:
+  Description: ""
+  Enabled: false
+
+Style/OptionalArguments:
+  Description: ""
+  Enabled: false
+
+Style/RedundantReturn:
+  Description: ""
+  Enabled: false
+
+Style/RedundantSort:
+  Description: ""
+  Enabled: false
+
+Style/StringConcatenation:
+  Description: ""
+  Enabled: false
+
+Style/StructInheritance:
+  Description: ""
+  Enabled: false
+
+Style/SymbolProc:
+  Description: ""
+  Enabled: false
