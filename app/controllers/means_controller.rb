@@ -13,9 +13,13 @@ class MeansController < ApplicationController
   # rubocop:enable Layout/LineLength
 
   def create
-    result = CentralTendencies::Mean.new(data: data_params).call
-    Mean.create!(received: data_params.to_s, result: result)
-    render json: { result: result }
+    begin
+      result = CentralTendencies::Mean.new(data: data_params).call
+      Mean.create!(received: data_params.to_s, result: result)
+      render json: { result: result }, status: :created
+    rescue StandardError => e
+      render json: { error: e.message }, status: :unprocessable_entity
+    end
   end
 
   private

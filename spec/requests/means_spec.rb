@@ -4,11 +4,11 @@ require 'rails_helper'
 
 RSpec.describe '/means', type: :request do
   let(:valid_attributes) do
-    { received: [1, 2, 3, 4, 5, 6, 7, 8, 9] }
+    { received: [1, 2, 3, 4, 5, 6, 7, 8, 9], result: 5 }
   end
 
   let(:invalid_attributes) do
-    { received: [1, 2, 3, '4'] }
+    { received: [1, 2, 3, '4'], result: 10 }
   end
 
   let(:valid_headers) do
@@ -34,7 +34,7 @@ RSpec.describe '/means', type: :request do
 
       it 'renders a JSON response with the new mean' do
         post means_url,
-             params: { mean: valid_attributes }, headers: valid_headers, as: :json
+             params: { data: valid_attributes[:received] }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:created)
         expect(response.content_type).to match(a_string_including('application/json'))
       end
@@ -44,13 +44,13 @@ RSpec.describe '/means', type: :request do
       it 'does not create a new Mean' do
         expect do
           post means_url,
-               params: { mean: invalid_attributes }, as: :json
+               params: { data: invalid_attributes[:received] }, as: :json
         end.to change(Mean, :count).by(0)
       end
 
       it 'renders a JSON response with errors for the new mean' do
         post means_url,
-             params: { mean: invalid_attributes }, headers: valid_headers, as: :json
+             params: { data: invalid_attributes[:received] }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:unprocessable_entity)
         expect(response.content_type).to match(a_string_including('application/json'))
       end
