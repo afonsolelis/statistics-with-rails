@@ -42,11 +42,11 @@ RSpec.describe '/means', type: :request do
       it 'can handle big arrays' do
         data_array = (1..100_000).to_a
         post means_url,
-              params: { data: data_array }, headers: valid_headers, as: :json
-              result = JSON.parse(response.body)
-              expect(data_array.sum.to_f/data_array.size).to eq(result['result'])
-              expect(response).to have_http_status(:created)
-              expect(response.content_type).to match(a_string_including('application/json'))
+             params: { data: data_array }, headers: valid_headers, as: :json
+        result = JSON.parse(response.body)
+        expect(data_array.sum.to_f / data_array.size).to eq(result['result'])
+        expect(response).to have_http_status(:created)
+        expect(response.content_type).to match(a_string_including('application/json'))
       end
     end
 

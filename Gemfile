@@ -22,3 +22,5 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop'
 end
+
+gem 'simplecov', require: false, group: :test
