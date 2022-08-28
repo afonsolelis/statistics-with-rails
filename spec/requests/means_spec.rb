@@ -4,15 +4,15 @@ require 'rails_helper'
 
 RSpec.describe '/means', type: :request do
   let(:valid_attributes) do
-    { received: [1,2,3,4,5,6,7,8,9] }
+    { received: [1, 2, 3, 4, 5, 6, 7, 8, 9] }
   end
 
   let(:invalid_attributes) do
-    { received: [1,2,3,"4"] }
+    { received: [1, 2, 3, '4'] }
   end
 
   let(:valid_headers) do
-    { content_type: "application-json"}
+    { content_type: 'application-json' }
   end
 
   describe 'GET /index' do
