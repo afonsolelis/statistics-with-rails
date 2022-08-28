@@ -14,7 +14,7 @@ class MeansController < ApplicationController
 
   def create
     begin
-      result = CentralTendencies::Mean.new(data: data_params).call
+      result = CentralTendencies::Mean.new(data_params).call
       Mean.create!(received: data_params.to_s, result: result)
       render json: { result: result }, status: :created
     rescue StandardError => e

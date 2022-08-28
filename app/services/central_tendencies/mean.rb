@@ -4,7 +4,7 @@ module CentralTendencies
   class Mean
     attr_accessor :data
 
-    def initialize(data:)
+    def initialize(data)
       self.data = data
     end
 
