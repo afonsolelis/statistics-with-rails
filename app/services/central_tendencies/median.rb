@@ -14,6 +14,13 @@ module CentralTendencies
 
     private
 
-    def result; end
+    def result
+      data.sort!
+      if data.length.odd?
+        data[data.count/2]
+      else
+        (data[data.count/2] + data[data.count/2 - 1]) / 2.0
+      end
+    end
   end
 end
