@@ -34,3 +34,6 @@
 
 # .lock files
 *.lock
+
+#byebug
+.byebug_history
