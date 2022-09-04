@@ -2,8 +2,6 @@
 
 # Class to calculate the median of a set of numbers
 class MediansController < ApplicationController
-
-  # rubocop:disable Layout/LineLength
   def index
     render json: {
       message:         'Median is middle value of a set of numbers',
@@ -11,7 +9,6 @@ class MediansController < ApplicationController
       all_requests:    Median.all
     }
   end
-  # rubocop:enable Layout/LineLength
 
   def create
     begin

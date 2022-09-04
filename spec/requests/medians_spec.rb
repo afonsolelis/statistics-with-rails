@@ -39,7 +39,7 @@ RSpec.describe '/medians', type: :request do
       it 'renders a JSON response with the new median' do
         post medians_url,
              params: { data: valid_attributes[:received] }, headers: valid_headers, as: :json
-        expect(JSON.parse(response.body)["result"]).to eq(valid_attributes[:result])
+        expect(JSON.parse(response.body)['result']).to eq(valid_attributes[:result])
         expect(response).to have_http_status(:created)
         expect(response.content_type).to match(a_string_including('application/json'))
       end
@@ -47,7 +47,7 @@ RSpec.describe '/medians', type: :request do
       it 'renders a JSON response with the new median' do
         post medians_url,
              params: { data: valid_attributes_2[:received] }, headers: valid_headers, as: :json
-             expect(JSON.parse(response.body)["result"]).to eq(valid_attributes_2[:result])
+        expect(JSON.parse(response.body)['result']).to eq(valid_attributes_2[:result])
         expect(response).to have_http_status(:created)
         expect(response.content_type).to match(a_string_including('application/json'))
       end
