@@ -17,7 +17,7 @@ RSpec.describe '/means', type: :request do
 
   describe 'GET /index' do
     it 'renders a successful response' do
-      Audit.create! valid_attributes.merge(statistic: 'mean')
+      Audit.create! valid_attributes.merge(statistic: 'means')
       get means_url, headers: valid_headers, as: :json
       expect(response).to be_successful
     end

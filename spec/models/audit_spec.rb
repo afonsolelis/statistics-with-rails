@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe Audit, type: :model do
   it 'must create with valid attributes' do
-    Audit.create!(received: [1, 2, 3, 4, 5, 6, 7, 8, 9].to_s, result: 5, statistic: 'mode')
+    Audit.create!(received: [1, 2, 3, 4, 5, 6, 7, 8, 9].to_s, result: 5, statistic: 'modes')
     expect(Audit.count).to eq(1)
   end
 

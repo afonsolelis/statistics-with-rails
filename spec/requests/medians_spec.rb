@@ -21,7 +21,7 @@ RSpec.describe '/medians', type: :request do
 
   describe 'GET /index' do
     it 'renders a successful response' do
-      Audit.create! valid_attributes.merge(statistic: 'median')
+      Audit.create! valid_attributes.merge(statistic: 'medians')
       get medians_url, headers: valid_headers, as: :json
       expect(response).to be_successful
     end
