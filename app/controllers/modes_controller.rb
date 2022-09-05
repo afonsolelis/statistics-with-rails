@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-# Class to calculate the median of a set of numbers
-class MediansController < ApplicationController
+# Class to calculate the mode of a set of numbers
+class ModesController < ApplicationController
   def index
     render json: {
-      message:         'Median is middle value of a set of numbers',
+      message:         'Mode the most repeated value in a set of numbers',
       payload_example: { data: 'array of integers or floats like: [1, 2, 3, 4, 5... n]' },
-      all_requests:    Audit.where(statistic: 'median').order(created_at: :desc)
+      all_requests:    Audit.where(statistic: 'mode').order(created_at: :desc)
     }
   end
 
   def create
     begin
-      result = CentralTendencies::Median.new(data_params).call
-      Audit.create!(received: data_params.to_s, result: result, statistic: 'median')
+      result = CentralTendencies::Mode.new(data_params).call
+      Audit.create!(received: data_params.to_s, result: result, statistic: 'mode')
       render json: { result: result }, status: :created
     rescue StandardError => e
       render json: { error: e.message }, status: :unprocessable_entity

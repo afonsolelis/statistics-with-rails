@@ -7,7 +7,7 @@ class MeansController < ApplicationController
     render json: {
       message:         'Mean is an essential concept in mathematics and statistics. The mean is the average or the most common value in a collection of numbers.',
       payload_example: { data: 'array of integers or floats like: [1, 2, 3, 4, 5... n]' },
-      all_requests:    Mean.all
+      all_requests:    Audit.where(statistic: 'mean').order(created_at: :desc)
     }
   end
   # rubocop:enable Layout/LineLength
@@ -15,7 +15,7 @@ class MeansController < ApplicationController
   def create
     begin
       result = CentralTendencies::Mean.new(data_params).call
-      Mean.create!(received: data_params.to_s, result: result)
+      Audit.create!(received: data_params.to_s, result: result, statistic: 'mean')
       render json: { result: result }, status: :created
     rescue StandardError => e
       render json: { error: e.message }, status: :unprocessable_entity
