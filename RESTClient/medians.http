@@ -1,0 +1,10 @@
+###
+GET http://localhost:3000/medians
+
+###
+POST  http://localhost:3000/medians
+Content-Type: application/json
+
+{
+  "data": [78, 67, 56, 12, 90, 19, 90]
+}
