@@ -16,7 +16,7 @@ module CentralTendencies
 
     def result
       tallied = data.tally
-      top_pair = tallied.sort_by { |_,v| v }.last(2)
+      top_pair = tallied.sort_by { |_, v| v }.last(2)
       if top_pair.size == 1
         top_pair[0][0]
       elsif top_pair[0][1] == top_pair[1][1]

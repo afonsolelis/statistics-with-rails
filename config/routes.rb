@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :medians, only: [:index, :create]
   resources :means, only: [:index, :create]
   resources :modes, only: [:index, :create]
+  resources :mean_deviations, only: [:index, :create]
   # root "articles#index"
 end
